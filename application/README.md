@@ -1,8 +1,9 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Tech Used
-- https://dashboard.convex.dev/
+- https://dashboard.convex.dev/ - Database, cron, etc
 - https://dashboard.clerk.com/ - Clerk - Auth
+- https://ui.shadcn.com/ - UI Components
 
 ## Getting Started
 
