@@ -3,6 +3,7 @@
 import { useQuery } from "convex/react";
 import { api } from "../../../convex/_generated/api";
 import { Skeleton } from "@/components/ui/skeleton";
+import { EventForm } from "./EventForm";
 
 export default function Events() {
     const events = useQuery(api.events.get);
@@ -19,6 +20,8 @@ export default function Events() {
               <p className="text-sm">{description}</p>
             </div>
           ))}
+        <EventForm />
       </main>
     );
 }
+
