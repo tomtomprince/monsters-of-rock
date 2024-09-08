@@ -13,6 +13,7 @@ import type {
   FilterApi,
   FunctionReference,
 } from "convex/server";
+import type * as ensureAuthenticated from "../ensureAuthenticated.js";
 import type * as events from "../events.js";
 import type * as tasks from "../tasks.js";
 
@@ -25,6 +26,7 @@ import type * as tasks from "../tasks.js";
  * ```
  */
 declare const fullApi: ApiFromModules<{
+  ensureAuthenticated: typeof ensureAuthenticated;
   events: typeof events;
   tasks: typeof tasks;
 }>;
