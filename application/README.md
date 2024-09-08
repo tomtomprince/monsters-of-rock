@@ -4,7 +4,9 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 - https://dashboard.convex.dev/ - Database, cron, etc
 - https://dashboard.clerk.com/ - Clerk - Auth
 - https://ui.shadcn.com/ - UI Components
-
+- https://react-leaflet.js.org/ - Maps
+    - https://ujjwaltiwari2.medium.com/a-guide-to-using-openstreetmap-with-react-70932389b8b1 - Possible extensions
+    
 ## Getting Started
 
 First, run the development server:
