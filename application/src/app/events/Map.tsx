@@ -4,6 +4,7 @@ import "leaflet/dist/leaflet.css";
 import "leaflet-defaulticon-compatibility";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
 import React from "react";
+import { GodzillaMarker } from "./GodzillaMarker";
 
 export function Map({
     center,
@@ -16,14 +17,15 @@ export function Map({
   return (
     <MapContainer
       center={center}
-      zoom={13}
+      zoom={9}
       scrollWheelZoom
-      className="h-[30vh]"
+      className="h-[60vh] w-[60vw]"
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
+      <GodzillaMarker />
       {markers.map((marker) => {
         return (
           <Marker
