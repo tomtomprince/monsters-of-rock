@@ -1,5 +1,6 @@
 import { internalMutation, query } from "./_generated/server";
 
+// Credit to Claude for generating the initial code
 interface Coordinate {
   lat: number;
   lng: number;

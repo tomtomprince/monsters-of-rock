@@ -3,6 +3,7 @@ import { Icon } from "leaflet";
 import { api } from "../../../convex/_generated/api";
 import { Marker, Popup } from "react-leaflet";
 
+// Credit to Claude for generating the initial code for a circular path here
 const PEARL_DISTRICT: Coordinate = { lat: 45.5276, lng: -122.683 };
 const RADIUS_MILES = 5;
 const SPEED_MPS = 500;

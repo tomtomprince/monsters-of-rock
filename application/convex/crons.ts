@@ -5,7 +5,7 @@ const crons = cronJobs();
 
 crons.interval(
   "moveGodzilla",
-  { seconds: 5 },
+  { hours: 5 },
   internal.godzilla.godzillaCron
 );
 
