@@ -1,5 +1,7 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+This is a hackathon project for https://www.learnwithjason.dev/blog/web-dev-challenge-hackathon-monsters/
+
 ## How far I got
 Clerk and Convex set up were pretty easy. I added a rough form to create events and decided that creating was enough. Then I added 1 monster (Godzilla, obviously) and added a cron func to move him towards the last event created since Godzilla obviously has serious FOMO.
 
