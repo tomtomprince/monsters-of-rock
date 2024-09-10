@@ -1,5 +1,6 @@
+import { useQuery } from "convex/react";
 import { Icon } from "leaflet";
-import { useEffect, useState } from "react";
+import { api } from "../../../convex/_generated/api";
 import { Marker, Popup } from "react-leaflet";
 
 const PEARL_DISTRICT: Coordinate = { lat: 45.5276, lng: -122.683 };
@@ -9,25 +10,18 @@ const UPDATE_INTERVAL_SEC = 1;
 const EARTH_RADIUS_KM = 6371;
 
 export function GodzillaMarker() {
-const [marker, setMarker] = useState<Coordinate>(godzillaPath[0]);
-  useEffect(() => {
-    // Update Godzilla's position every 5 seconds
-    const intervalId = setInterval(() => {
-      const newPosition = getNextGodzillaPosition();
-      // Update your map pin here with newPosition
-      console.log(`Godzilla's new position: ${JSON.stringify(newPosition)}`);
-      setMarker(newPosition);
-    }, UPDATE_INTERVAL_SEC * 1000);
+const godzilla = useQuery(api.godzilla.getGodzilla);
 
-    return () => clearInterval(intervalId);
-  }, []);
-
+if (!godzilla) {
+  return null;
+}
+const godzillaPosition = {
+  lat: godzilla.latitude,
+  lng: godzilla.longitude,
+};
   return (
     <Marker
-      position={{
-        lat: marker.lat,
-        lng: marker.lng,
-      }}
+      position={godzillaPosition}
       icon={
         new Icon({
           iconUrl: "https://cdn-icons-png.freepik.com/512/774/774952.png",

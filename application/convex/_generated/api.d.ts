@@ -13,9 +13,10 @@ import type {
   FilterApi,
   FunctionReference,
 } from "convex/server";
+import type * as crons from "../crons.js";
 import type * as ensureAuthenticated from "../ensureAuthenticated.js";
 import type * as events from "../events.js";
-import type * as tasks from "../tasks.js";
+import type * as godzilla from "../godzilla.js";
 
 /**
  * A utility for referencing Convex functions in your app's API.
@@ -26,9 +27,10 @@ import type * as tasks from "../tasks.js";
  * ```
  */
 declare const fullApi: ApiFromModules<{
+  crons: typeof crons;
   ensureAuthenticated: typeof ensureAuthenticated;
   events: typeof events;
-  tasks: typeof tasks;
+  godzilla: typeof godzilla;
 }>;
 export declare const api: FilterApi<
   typeof fullApi,
