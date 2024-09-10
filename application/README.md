@@ -1,5 +1,10 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## How far I got
+Clerk and Convex set up were pretty easy. I added a rough form to create events and decided that creating was enough. Then I added 1 monster (Godzilla, obviously) and added a cron func to move him towards the last event created since Godzilla obviously has serious FOMO.
+
+This at least shows some cool Convex functionality along with the most basic of Clerk functionality.
+
 ## Initial MVP Spec
 Monsters are real and they've come to rock with us from the depths of Earth bringing heavy metal and good vibes.
 
