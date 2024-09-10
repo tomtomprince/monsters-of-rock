@@ -19,7 +19,7 @@ export function Map({
       center={center}
       zoom={9}
       scrollWheelZoom
-      className="h-[60vh] w-[60vw]"
+      className="h-full w-full"
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

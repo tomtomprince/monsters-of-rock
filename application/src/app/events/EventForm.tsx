@@ -48,7 +48,6 @@ export function EventForm() {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
     const startTime = DateTime.fromISO(values.startTime);
     const startDate = DateTime.fromISO(values.startDate)
       .set({
@@ -80,6 +79,7 @@ export function EventForm() {
       latitude: values.latitude,
       longitude: values.longitude,
     });
+    form.reset();
   }
 
   return (
@@ -124,7 +124,7 @@ export function EventForm() {
           name="startDate"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Description</FormLabel>
+              <FormLabel>Start Date</FormLabel>
               <FormControl>
                 <Input type="date" {...field} />
               </FormControl>
@@ -140,7 +140,7 @@ export function EventForm() {
           name="startTime"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Description</FormLabel>
+              <FormLabel>Start Time</FormLabel>
               <FormControl>
                 <Input
                   type="time"
@@ -163,7 +163,7 @@ export function EventForm() {
           name="endDate"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Description</FormLabel>
+              <FormLabel>End Date</FormLabel>
               <FormControl>
                 <Input type="date" {...field} />
               </FormControl>
@@ -179,7 +179,7 @@ export function EventForm() {
           name="endTime"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Description</FormLabel>
+              <FormLabel>End Time</FormLabel>
               <FormControl>
                 <Input
                   type="time"

@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { ClerkConvexConfigWrapper } from "./ClerkConvexConfigWrapper";
+import { Authenticated, Unauthenticated } from "convex/react";
+import { SignInButton, UserButton } from "@clerk/clerk-react";
+import { NavBar } from "./NavBar";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -30,6 +33,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ClerkConvexConfigWrapper>
+          <NavBar />
             {children}
         </ClerkConvexConfigWrapper>
       </body>

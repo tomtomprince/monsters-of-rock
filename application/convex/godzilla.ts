@@ -58,7 +58,7 @@ function updateGodzillaPosition(nextEventCoordinate: Coordinate, godzillaPositio
 export const godzillaCron = internalMutation({
   handler: async (ctx) => {
     const nextEvent = await ctx.db
-      .query("events")
+      .query("events").order('desc')
       .first();
 
     const godzillaRecord = await ctx.db
@@ -80,6 +80,8 @@ export const godzillaCron = internalMutation({
       ctx.db.patch(godzillaRecord._id, {
         latitude: newGodzillaPosition.lat,
         longitude: newGodzillaPosition.lng,
+        currentEventTitle: nextEvent.title,
+        currentEventId: nextEvent._id,
       });
     }
   },

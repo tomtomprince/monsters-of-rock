@@ -29,7 +29,7 @@ const godzillaPosition = {
         })
       }
     >
-      <Popup>Godzilla!!!!</Popup>
+      <Popup>Godzilla heading for {godzilla.currentEventTitle}</Popup>
     </Marker>
   );
 }
