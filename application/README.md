@@ -58,8 +58,19 @@ This is an event marketplace for managing events, ticket sales, band match makin
 https://github.com/user-attachments/assets/2164b8b9-b33c-4643-a484-c1d094ef73af
 
 ## Getting Started
+You'll need to setup Convex and Clerk and add the necessary environment variables to `.env.local` to get started.
+```
+CONVEX_DEPLOYMENT=<create a project and add>
 
-First, run the development server:
+NEXT_PUBLIC_CONVEX_URL=<convex dashboard - see next js quickstart>
+
+# Clerk
+# This url is also set in the Convex UI
+NEXT_PUBLIC_CLERK_URL=<from clerk dashboard>
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=<from clerk dashboard - see next js quickstart>
+```
+
+Run the development server:
 
 ```bash
 # First
