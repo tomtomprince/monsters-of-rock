@@ -1,12 +1,55 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Initial MVP Spec
+Monsters are real and they've come to rock with us from the depths of Earth bringing heavy metal and good vibes.
+
+This exists in the Toho Godzilla universe loosely, but you'll probably see a lot of various monsters.
+
+This is an event marketplace for managing events, ticket sales, band match making, gear sales, etc.
+
+#### The MVP will allow:
+
+1. Basic auth via Clerk
+2. Users can CRUD of events (via Convex)
+    a. Events should maintain time in UTC along with a timezone component. They should be displayed in the timezone they are created in.
+    b. Online ticket sale deadlines are not mvp, but will display in both event tz and user tz.
+3. Users can view available events on a calendar
+4. Users can see where events are on a map
+5. Users can see where Godzilla and other monsters are on a map
+6. Users can view events filtered by probability of monster battle
+    a. Or maybe they want to see Godzilla and Godzilla likes certain shows more than others
+    b. Keep it simple -- we'll assume that Godzilla is super helpful and travels known patrols to his known favorite shows. We'll assume that he's cat-like and sleeps in the Colosseum during the day from 9am to 6pm and always moves at a certain rate.
+    c. Server tick is 5 minutes?
+
+#### Capture for stretch goals
+- [ ] Vendor/Performer Management
+- [ ] Users can "purchase" tickets
+- [ ] Users can filter calendar/lists for events they've purchased tickets for
+- [ ] Event Discovery and Recommendation
+- [ ] Notification/Alert System
+- [ ] User Profiles and Social Features
+
+#### Some Ideas from Claude based on above
+- [ ] Kaiju Spotter's Guide: An app that allows users to identify different types of kaiju, learn about their strengths, weaknesses, and behaviors. It could include a bestiary with in-depth profiles, user-submitted sightings, and mini-games to test your kaiju knowledge.
+
+- [ ] Kaiju Battle Simulator: This could be a playful interactive app where users can pit different kaiju against each other, adjust variables like size, strength, and special abilities, and simulate epic battles. Successful battles could unlock new kaiju to add to the roster.
+
+- [ ] Kaiju Tourism: Embrace the campy side of the kaiju world and create an app that helps humans plan "monster-watching" vacations. It could provide guides to the best kaiju-spotting locations, hotels/restaurants that cater to kaiju enthusiasts, and even package deals for monster-themed activities.
+
+- [ ] Kaiju Alert Network: A real-time monitoring and warning system that notifies users of incoming kaiju threats, provides evacuation guidance, and even allows citizens to report monster sightings to help authorities respond.
+
+- [ ] Kaiju Pet Adoption: Lean into the more adorable side of the kaiju world by creating an app that connects people with "pocket-sized" kaiju pets they can adopt and care for. Users could customize their kaiju's appearance, skills, and personality.
+
 ## Tech Used
 - https://dashboard.convex.dev/ - Database, cron, etc
 - https://dashboard.clerk.com/ - Clerk - Auth
 - https://ui.shadcn.com/ - UI Components
 - https://react-leaflet.js.org/ - Maps
     - https://ujjwaltiwari2.medium.com/a-guide-to-using-openstreetmap-with-react-70932389b8b1 - Possible extensions
-    
+
+## Initial Demo Video
+https://github.com/user-attachments/assets/2164b8b9-b33c-4643-a484-c1d094ef73af
+
 ## Getting Started
 
 First, run the development server:
