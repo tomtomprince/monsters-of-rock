@@ -19,6 +19,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useMutation } from "convex/react";
 import { api } from "../../../convex/_generated/api";
+import React from "react";
+import { LocationContext } from "./Events";
 
 const formSchema = z.object({
   title: z.string().min(2, {
@@ -34,6 +36,7 @@ const formSchema = z.object({
 });
 
 export function EventForm() {
+  const { location } = React.useContext(LocationContext);
   const createEvent = useMutation(api.events.createEvent);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -44,6 +47,8 @@ export function EventForm() {
       startTime: "",
       endDate: "",
       endTime: "",
+      latitude: location?.lat,
+      longitude: location?.lng,
     },
   });
 

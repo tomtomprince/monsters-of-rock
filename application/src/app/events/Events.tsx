@@ -7,17 +7,31 @@ import { EventForm } from "./EventForm";
 import { Map } from "./Map";
 import Image from "next/image";
 import { DateTime } from "luxon";
+import React from "react";
+import { LatLng } from "leaflet";
+
+
+export const LocationContext = React.createContext<{
+  location: LatLng | null;
+  setLocation: (location: LatLng | null) => void;
+}>({
+  location: null,
+  setLocation: () => {},
+});
 
 export default function Events() {
+  const [location, setLocation] = React.useState<LatLng | null>(null);
   const events = useQuery(api.events.get);
   if (!events?.length)
     return (
       <Skeleton className="animate-pulse rounded-md bg-muted h-4 w-[250px]" />
     );
   return (
+    <LocationContext.Provider value={{ location, setLocation}}>
     <div className="flex">
-      <aside className="max-h-[90vh] sticky top-0 bg-gray-800 p-4 overflow-auto">
+      <aside className="max-h-[90vh] sticky top-0 bg-gray-800 p-4 overflow-auto flex flex-col gap-2">
         <h1 className="text-xl">Events List</h1>
+        <p>Add a new event by clicking the map and then clicking the popover (Will improve this ux in the future)</p>
         <ul role="list" className="space-y-3">
           {events.map(
             ({
@@ -60,7 +74,6 @@ export default function Events() {
             )
           )}
         </ul>
-        <EventForm />
       </aside>
 
       <div className="w-full h-[90vh]">
@@ -75,5 +88,6 @@ export default function Events() {
         />
       </div>
     </div>
+    </LocationContext.Provider>
   );
 }
